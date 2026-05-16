@@ -1,5 +1,9 @@
 
-export const AnimatedBorderButton = ({children}) => {
+interface AnimatedBorderButtonProps {
+    children: React.ReactNode;
+}
+
+export const AnimatedBorderButton = ({ children }: AnimatedBorderButtonProps) => {
   return (
     <button 
         className=" relative bg-transparent border border-border text-foreground rounded-full

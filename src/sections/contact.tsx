@@ -38,7 +38,7 @@ export const Contact = () => {
     message: "",
   }); // null, 'success', 'error'
 
-  const handelSubmit = async (e) => {
+  const handelSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     setSubmitStatus({ type: '', message: "" });
@@ -61,7 +61,8 @@ export const Contact = () => {
 
     } catch (error) {
       console.error("Email sending error:", error);
-      setSubmitStatus({ type: 'error', message: error.text || "Failed to send message. Please try again later." });
+      const errorMessage = error instanceof Error ? error.message : "Failed to send message. Please try again later.";
+      setSubmitStatus({ type: 'error', message: errorMessage });
     } finally {
       setIsLoading(false);
     }
@@ -97,7 +98,7 @@ export const Contact = () => {
         {/* contact form */}
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
-            <form className="space-y-6 ">
+            <form className="space-y-6 " onSubmit={handelSubmit}>
               <div>
                 <label 
                   htmlFor="name" 
@@ -152,7 +153,7 @@ export const Contact = () => {
                 />
               </div>
 
-              <Button className="w-full" type="submit" size="lg" disabled={isLoading} onClick={handelSubmit}>
+              <Button className="w-full" type="submit" size="lg" disabled={isLoading}>
                 {
                   isLoading ? (
                     <>Sending...</>

@@ -4,7 +4,7 @@ import { Hero } from "@/sections/Hero"
 import { About } from "@/sections/About"
 import { Projects } from "@/sections/Projects"
 import { Experience } from "@/sections/Experience"
-import { Contact } from "@/sections/Contact"
+import { Contact } from "@/sections/contact"
 import { Testimonials } from "@/sections/Testimonials"
 import { Footer } from "@/layout/Footer"
 
