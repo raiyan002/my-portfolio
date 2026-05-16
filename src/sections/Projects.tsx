@@ -3,37 +3,37 @@ import { AnimatedBorderButton } from "../component/AnimatedBorderButton";
 
 const projects = [
   {
-    title: "Project One",
-    description: "A web application that allows users to track their fitness goals and progress over time.",
-    Image: "/assets/projects/project1.png",
-    tags: ["React", "Node.js", "MongoDB"],
-    link: "#",
-    github: "#"
+    title: "Tic Tac Toe 2.0",
+    description: "A strategic twist on classic Tic-Tac-Toe featuring dynamic moving pieces and AI gameplay.",
+    Image: "/assets/projects/tic-tac-toe-2.0-proj.png",
+    tags: ["Angular", "TypeScript", "RxJS"],
+    link: "https://tic-tac-toe-2-0-flax.vercel.app/",
+    github: "https://github.com/raiyan002/tic-tac-toe-2.0"
   },
-  {
-    title: "Project Two",
-    description: "An e-commerce platform that provides a seamless shopping experience with advanced search and personalized recommendations.",
-    Image: "/assets/projects/project2.png",
-    tags: ["Next.js", "GraphQL", "PostgreSQL"],
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "Project Three",
-    description: "A real-time chat application that supports group conversations, file sharing, and video calls.",
-    Image: "/assets/projects/project3.png",
-    tags: ["Angular", "Firebase", "WebRTC"],
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "Project Four",
-    description: "A task management tool that helps teams collaborate and stay organized with features like Kanban boards and time tracking.",
-    Image: "/assets/projects/project4.png",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    link: "#",
-    github: "#",
-  }
+  // {
+  //   title: "Project Two",
+  //   description: "An e-commerce platform that provides a seamless shopping experience with advanced search and personalized recommendations.",
+  //   Image: "/assets/projects/project2.png",
+  //   tags: ["Next.js", "GraphQL", "PostgreSQL"],
+  //   link: "#",
+  //   github: "#",
+  // },
+  // {
+  //   title: "Project Three",
+  //   description: "A real-time chat application that supports group conversations, file sharing, and video calls.",
+  //   Image: "/assets/projects/project3.png",
+  //   tags: ["Angular", "Firebase", "WebRTC"],
+  //   link: "#",
+  //   github: "#",
+  // },
+  // {
+  //   title: "Project Four",
+  //   description: "A task management tool that helps teams collaborate and stay organized with features like Kanban boards and time tracking.",
+  //   Image: "/assets/projects/project4.png",
+  //   tags: ["React", "TypeScript", "Tailwind CSS"],
+  //   link: "#",
+  //   github: "#",
+  // }
 ];
 
 export const Projects = () => {
@@ -97,6 +97,7 @@ export const Projects = () => {
                     className="w-5 h-5 text-muted-foreground group-hover:text-primary
                     group-hover:translate-x-1
                     group-hover:-translate-y-1 transition-all"
+                    onClick={() => window.open(project.link, '_blank')}
                   />
                 </div>
                 <p className="text-sm text-muted-foreground">{project.description}</p>
